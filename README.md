@@ -1,18 +1,36 @@
 # HW 10 Object-Oriented Programming: Team Profile Generator
 
-# Description
+## Table of Contents 
 
-- This project was created to assist teams in building a webpage that allows for quick access of users emails and GitHub profiles. 
+- [Description] (#Description)
+- [Preview] (#Preview)
+- [Installation] (#Installation)
+- [Usage] (#Usage)
+- [Links] (#Links)
+- [Grade-Requirements] (#Grade-Requirements)
 
-# Preview
+## Description
+
+Node.js command-line application that takes in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. 
+
+## Preview
 
 - gif walkthrough of creating app through command line
 
-# Links
+## Installation
+
+- Copy repository to your device
+- NPM install & run node index.js
+
+## Usage
+
+- This project was designed to be utilized by teams that would like to quickly and easily input and access employee information
+
+## Links
 
 - GitHub: https://github.com/mxhuisken/hw10_teamProfile
 
-# Grade Requirements
+## Grade Requirements
 
 - Command-line application prompts user to input team member information as well as their own. HTML file is then generated that displays a nicely formatted team roster based on user input
 
