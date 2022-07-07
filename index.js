@@ -1,9 +1,12 @@
+const inquirer = require("inquirer")
 const Manager = require("./lib/Manager");
-const inquirer = require("inquirer");
+const Intern = require("./lib/Intern")
+const Engineer = require("./lib/Engineer")
 const { exit } = require("process");
+const fs = require("fs");
 
 function init(){
-    createManager();
+   createManager();
 }
 
 const employeeArr = [];
@@ -37,17 +40,19 @@ function createManager(){
             answers.managerOfficeNumber
         );
         employeeArr.push(manager)
-        addEmployees()
-    });
+        console.log('created manager')
+        
+        setTimeout(() => addEmployees(), 1000);
+    })
 }
 
 function addEmployees(){
     inquirer.prompt([
         {
-            type: 'List',
+            type: 'list',
             name: 'todo',
-            message: 'Select the employees role...',
-            choices: ["Engineer", "Intern", "Exit"],
+            message: 'Select the employees role that you would like to add...',
+            choices: ["Engineer", "Intern", "Exit"]
         }
     ]).then((answer) => {
         switch(answer.todo){
@@ -57,8 +62,9 @@ function addEmployees(){
             case "Intern":
                 addIntern();
             break;
-            default:
-                exit();
+            case "Exit":
+                createHTML();
+            break;
         }
     })
 }
@@ -94,6 +100,9 @@ function addEngineer(){
         );
 
         employeeArr.push(engineer)
+        console.log('created engineer')
+        
+        setTimeout(() => addEmployees(), 1000);
     });
 }
 
@@ -111,7 +120,7 @@ function addIntern(){
         },
         {
             type: 'input',
-            name: 'internemail',
+            name: 'internEmail',
             message: "What is the intern's email?",
         },
         {
@@ -124,14 +133,46 @@ function addIntern(){
             answers.internName,
             answers.internId,
             answers.internEmail,
-            answers.internGitHub,
+            answers.internSchool,
         );
 
         employeeArr.push(intern)
+
+        console.log('created intern')
+        setTimeout(() => addEmployees(), 1000);
     });
 }
 
+function createCard(employee) {
+    return `
+        <div class="card">
+            <h3> ${employee.name}</h3>
+            <h4> ${employee.getRole()}</h4>
 
+            <p>${employee.id}</p>
+            <p>${employee.email}</p>
+            <p>${employee.officeNumber || employee.github || employee.school}</p>
+        </div>
+    `
+}
 
+function createHTML(){
+    const HTML = 
+    `
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Employee Directory</title>
+    </head>
+    <body>
+        ${employeeArr.map(createCard).join('')}}  
+    </body>
+    </html>
+    `;
+fs.writeFileSync("./dist/index.html", HTML);
+}
 
 init();
