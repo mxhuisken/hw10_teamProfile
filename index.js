@@ -126,7 +126,7 @@ function addIntern(){
         {
             type: 'input',
             name: 'internSchool',
-            message: "Where does the interen go to school?",
+            message: "Where does the intern go to school?",
         },
     ]).then((answers) => {
         const intern = new Intern(
@@ -145,13 +145,19 @@ function addIntern(){
 
 function createCard(employee) {
     return `
-        <div class="card">
-            <h3> ${employee.name}</h3>
-            <h4> ${employee.getRole()}</h4>
+        <div class="cardEach">
+        <div class="cardContent">
 
-            <p>${employee.id}</p>
-            <p>${employee.email}</p>
-            <p>${employee.officeNumber || employee.github || employee.school}</p>
+            <div class="cardHeader">
+                <h3> ${employee.name}</h3>
+                <h4> ${employee.getRole()}</h4>
+            </div>
+
+            <div class="cardP">
+                <p>${employee.id}</p>
+                <p>${employee.email}</p>
+                <p>${employee.officeNumber || employee.github || employee.school}</p>
+            </div>
         </div>
     `
 }
@@ -166,13 +172,27 @@ function createHTML(){
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Employee Directory</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200&family=Zen+Loop&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/style.css">
     </head>
+
     <body>
+
+    <header class="bannerContainer">
+        <h1 class="banner">Team Directory</h1>
+    </header>
+
+    <main class="cardContainer">
         ${employeeArr.map(createCard).join('')}}  
+    </main>
+    
     </body>
     </html>
     `;
 fs.writeFileSync("./dist/index.html", HTML);
+
 }
 
 init();

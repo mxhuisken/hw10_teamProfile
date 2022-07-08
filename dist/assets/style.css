@@ -1,0 +1,65 @@
+/* Universal Selector */
+
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200&family=Zen+Loop&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Albert Sans', sans-serif;
+}
+
+/* */
+
+/* BANNER */
+
+.bannerContainer {
+    display: flex;
+    background: #567c9d;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.banner {
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+/* CARDS */
+
+
+.cardContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 10px;
+}
+
+/*
+.cardEach{
+    max-width: 200px;
+    min-height: 250px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+*/
+
+
+.cardHeader {
+    background-color: #567c9d;
+    color: white;
+    text-align: center;
+    justify-content: center;
+    
+}
+
+.cardP{
+    display: flex;
+    padding: 10px;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(240, 247, 253);
+    color: #567c9d;
+  }
