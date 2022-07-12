@@ -16,6 +16,7 @@ function createManager(){
             type: 'input',
             name: 'managerName',
             message: "What is the team manager's name?",
+            
         },
         {
             type: 'input',
@@ -185,7 +186,7 @@ function createHTML(){
     </header>
 
     <main class="cardContainer">
-        ${employeeArr.map(createCard).join('')}}  
+        ${employeeArr.map(createCard).join('')}
     </main>
     
     </body>
