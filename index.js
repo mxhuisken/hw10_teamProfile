@@ -134,7 +134,7 @@ const internQuestions = [
         type: 'input',
         name: 'name',
         message: `Enter Intern's Name`,
-        // default: 'allec',
+       
         validate: (answer) => {
             if (answer !== '') {
                 return true;
@@ -146,7 +146,7 @@ const internQuestions = [
         type: 'input',
         name: 'id',
         message: `Enter the Intern's ID Number`,
-        // default: '009',
+    
         validate: (answer) => {
             const pass = answer.match(/^[1-9]\d*$/);
             if (pass) {
@@ -164,7 +164,7 @@ const internQuestions = [
         type: 'input',
         name: 'email',
         message: `Enter the Intern's Email Address`,
-        // default: 'allec@secretemail.com',
+    
         validate: (answer) => {
             const pass = answer.match(/\S+@\S+\.\S+/);
             if (pass) {
@@ -178,7 +178,7 @@ const internQuestions = [
         type: 'input',
         name: 'school',
         message: `Enter Intern's School Name`,
-        // default: 'UCI'
+
         validate: (answer) => {
             if (answer !== '') {
                 return true;

@@ -13,48 +13,46 @@
 /* BANNER */
 
 .bannerContainer {
-    display: flex;
     background: #567c9d;
-    align-items: center;
-    justify-content: center;
-    
 }
 
 .banner {
     text-align: center;
     padding: 20px;
-    color: white;
+    color: #fff;
 }
 
 /* CARDS */
 
-
-.cardContainer{
+.employee-card {
+    margin: 1em;
+    max-width: 280px;
+    width: 90%;
+    min-height: 16rem;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px;
-    padding: 10px;
-}
-
-/*
-.cardEach{
-    max-width: 200px;
-    min-height: 250px;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
-}
-*/
-
-
-.cardHeader {
-    background-color: #567c9d;
-    color: white;
-    text-align: center;
+    flex-direction: column;
     justify-content: center;
-    
+    text-align: center;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    border: none;
+    border-radius: 75px;
+  }
+
+  .teamInfo {
+    max-width: 1000px;
+    margin: 3em auto;
+    flex-wrap: wrap;
+  }
+
+.card-header {
+    background-color: #567c9d;
+    line-height: 2em;
+    padding-left: 5px;
+    padding: 10px 5px;
+    color: white;
 }
 
-.cardP{
+.card-body {
     display: flex;
     padding: 10px;
     flex-direction: column;
@@ -63,3 +61,7 @@
     background-color: rgb(240, 247, 253);
     color: #567c9d;
   }
+
+ul {
+    list-style: none;
+}

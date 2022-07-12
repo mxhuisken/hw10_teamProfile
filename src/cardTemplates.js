@@ -26,7 +26,7 @@ const createTeam = team => {
             <div class="card employee-card">
                 <div class="card-header">
                     <h2 class="title">${engineer.getName()}</h2>
-                    <h3><i class="fa fa-code" aria-hidden="true"></i> ${engineer.getRole()}</h3>
+                    <h3><i class="fa fa-bolt" aria-hidden="true"></i> ${engineer.getRole()}</h3>
                 </div>
                 <div class="card-body">
                     <ul class="list">
@@ -92,13 +92,13 @@ module.exports = team => {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/c502137733.js"></script>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/style.css">
     <title>Company | Org Chart </title>
 </head>
 
 <body>
     <div class="bannerContainer">
-        <h1 class="banner">My Team</h1>
+        <h1 class="banner">Team Viewer</h1>
     </div>
     <div class="cards-container">
         <div class="row">
